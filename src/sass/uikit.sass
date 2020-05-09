@@ -1,0 +1,201 @@
+// BUTTONS START
+
+.button
+  display: inline-block
+  padding: 19px 30px 16px
+
+  color: #ffffff
+  font-size: 12px
+  line-height: 13px
+  text-transform: uppercase
+  letter-spacing: 0.15rem
+
+  &_opacity,
+  &_o
+    border: 1px solid #ffffff
+    
+  &_opacity
+    background-color: rgba(0, 0, 0, .4)
+    
+  &_fill
+    background-color: #000000
+    
+  &_o
+    background-color: transparent
+
+  &_mobile
+    padding-top: 15px
+    padding-bottom: 15px
+
+    font-size: 10px
+    line-height: 13px
+
+  &_tablet
+    padding: 22px 50px
+
+    font-size: 15px
+    line-height: 16px
+
+  &:hover
+    background-color: #ffffff
+    color: #000000
+
+// BUTTONS END
+
+// REST ELEMENTS START
+
+.scroll-tip
+  position: relative
+
+  display: inline-block
+  width: 36px
+  height: 56px
+
+  background: rgba(36, 0, 0, 0.3)
+  border: 0.7px solid #FFFFFF
+  border-radius: 22px
+
+  &::after
+    content: ''
+
+    position: absolute
+    top: 10px
+    left: 50%
+
+    display: block
+    width: 1px
+    height: 10px
+
+    background-color: #ffffff
+
+    transition: $transition
+
+  &:hover::after
+    top: 20px
+
+.social-link
+  display: inline-block
+
+.arrow-link
+  font-size: 20px  // TEMP
+  position: relative
+
+  display: inline-block
+  padding-bottom: 70px
+
+  letter-spacing: 1px
+
+  writing-mode: vertical-lr
+  cursor: pointer
+  
+  &::after
+    position: absolute
+    left: calc(50% - 7px)
+    bottom: 20px
+    content: ''
+
+    display: block
+    height: 20px
+    width: 14px
+
+    background: url('../img/svg/arrow-down.svg')
+
+    transition: $transition
+
+  &:hover::after
+    bottom: 5px
+  
+// REST ELEMENTS END
+
+// LINKS START
+
+.link
+  color: $semitransparent
+
+  // transition: $transition
+  &_hover_size
+    &:hover
+      font-size: 45px
+  &_hover_opacity
+    &:hover
+      color: $nontransparent
+
+// LINKS END
+
+// BURGER START
+
+.burger
+  position: relative
+
+  height: 37px
+  width: 37px
+
+  cursor: pointer
+
+  @media screen and ( min-width: $tablet )
+    height: 76px
+    width: 104px
+
+  &::after
+    position: absolute
+    top: 0
+    left: 0
+
+    content: ''
+
+    display: block
+    height: 100%
+    width: 100%
+
+    background-position: 0 50%
+    background-repeat: no-repeat
+
+  &_open
+    &::after
+      background-image: url(../img/svg/burger-open-mobile.svg)
+      @media screen and ( min-width: $tablet )
+        background-image: url(../img/svg/burger-open-desktop.svg)
+
+  &_close
+    &::after
+      background-image: url(../img/svg/burger-close-mobile.svg)
+      background-position: 50%
+      @media screen and ( min-width: $tablet )
+        background-image: url(../img/svg/burger-close-desktop.svg)
+
+
+
+  &__text
+    position: absolute
+    // top: calc(50% - 11px)
+    top: 0
+    left: 40px
+
+    display: none
+
+    font-size: 20px
+    line-height: 76px
+
+    @media screen and ( min-width: $tablet )
+      display: block
+    
+.test-border
+  border: 1px solid red
+
+//BURGER END
+
+// TO GLOBAL START
+
+.font-size
+  &_14
+    font-size: 14px
+  &_16
+    font-size: 16px
+  &_18
+    font-size: 18px
+  &_20
+    font-size: 20px
+  &_35
+    font-size: 35px
+
+// TO GLOBAL END
