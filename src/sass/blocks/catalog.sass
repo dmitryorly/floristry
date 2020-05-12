@@ -2,6 +2,8 @@
   &__title
     text-align: center
     position: relative
+    @media screen and ( max-width: $mobile_l )
+      text-align: left
 
   &__decor
     position: absolute
@@ -17,12 +19,26 @@
     white-space: nowrap
     opacity: 3%
 
+    @media screen and ( max-width: $tablet )
+      display: none
+
   &__cards
     display: grid
     justify-content: center
     column-gap: 40px
     grid-template-columns: repeat(4, 350px)
+
+    @media screen and ( max-width: $tablet )
+      grid-template-columns: repeat(2, 330px)
+      justify-content: space-between
+      column-gap: 10px
+    
+    @media screen and ( max-width: $mobile_l )
+      grid-template-columns: 1fr
+      justify-items: center
+
   &__card
+    position: relative
     display: flex
     justify-content: space-between
     flex-direction: column
@@ -33,8 +49,22 @@
     background-color:rgba(255, 255, 255, 0.6)
     border: 1px solid rgba(255, 255, 255, 0)
 
+    @media screen and ( max-width: $tablet )
+      padding: 0
+      min-height: 450px
+
+    &:nth-child(3),
+    &:last-child
+      @media screen and ( max-width: $tablet )
+      display: none
+    
+    &:nth-child(2)
+      @media screen and ( max-width: $mobile_l )
+        display: none
+
     &:hover
-      border: 1px solid rgba(255, 255, 255, 0.2)
+      @media screen and ( min-width: $tablet )
+        border: 1px solid rgba(255, 255, 255, 0.2)
 
     &:hover .catalog__button
       display: block
@@ -44,7 +74,8 @@
     z-index: -1
     object-fit: cover
     object-position: 50%
-    width: 330px
+    // width: 330px
+    max-width: 100%
     height: 450px
 
   &__number
@@ -66,3 +97,31 @@
   &__decor-line
     margin-left: 12px
     max-width: width 70px
+
+  &__indicators
+    display: none
+    justify-content: center
+
+    margin: 30px auto 0
+
+    @media screen and ( max-width: $tablet )
+      display: flex
+
+    @media screen and ( max-width: $mobile_l )
+      margin-top: 20px
+
+  &__indicator
+    display: inline-block
+
+    margin-left: 6px
+    margin-right: 6px
+    
+    @media screen and ( min-width: $tablet + 1px )
+      display: none
+
+    &:nth-child(3),
+    &:last-child
+      @media screen and ( min-width: $mobile_l + 1px )
+        display: none
+    
+      
