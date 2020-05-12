@@ -4,22 +4,53 @@
     justify-content: space-between
     max-width: 1216px
     margin: 0 auto
+    @media screen and ( max-width: $tablet )
+      align-items: center
+      flex-direction: column
+
   &__content
     max-width: 350px
     margin-right: 40px
     display: flex
     flex-direction: column
     justify-content: center
+    @media screen and ( max-width: $tablet )
+      order: 1
+      max-width: 450px
+      margin-right: 0
+
+      text-align: center
+
+    @media screen and ( max-width: $mobile_l )
+      text-align: left
+
   &__title
     margin-top: 25px
     margin-bottom: 25px
+
   &__text
     font-size: 14px
     line-height: 24px
+    margin-top: 0
     margin-bottom: 45px
+    @media screen and ( min-width: $mobile_l ) and ( max-width: $tablet )
+      margin-top: 15px
+
   &__button
     margin-bottom: 25px
+    @media screen and ( max-width: $tablet )
+      margin-bottom: 0
+
   &__img
-    width: 697px
+    width: 100%
+    max-width: 697px
     max-height: 410px
     object-fit: cover
+    
+    @media screen and ( max-width: $tablet )
+      max-width: 453px
+      max-height: 323px
+
+      order: 0
+    @media screen and ( max-width: $mobile_l )
+      max-height: 170px
