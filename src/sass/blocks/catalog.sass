@@ -22,103 +22,11 @@
     @media screen and ( max-width: $tablet )
       display: none
 
-  &__cards
-    display: flex
-    justify-content: space-evenly
-    
   &__card
-    position: relative
-
     max-width: 350px
-    max-height: 450px
+    min-width: 288px
 
-    &-container
-      position: relative
-
-      // max-width: 370px
-      // max-height: 470px
-      width: 100%
-      height: 100%
-      
-      &:hover .catalog__button
-        display: block
-      &:hover .catalog__caption
-        bottom: 100px
-      
-
-      &::after
-        position: absolute
-        top: 0
-        left: 0
-        z-index: 0
-
-        display: none
-        height: 100%
-        width: 100%
-      
-        content: ''
-        background-color: rgba(0, 0, 0, .6)
-        &:hover
-          display: block
-      &:hover .catalog__card::after
-        display: block
-
-    // SHOW-HIDE CARDS
-    &:last-child,
-    &:nth-child(3)
-      @media screen and ( max-width: $tablet )
-        display: none
-    &:nth-child(2)
-      @media screen and ( max-width: $mobile_l )
-        display: none
-        
-      
-      
-  &__img
-    position: relative
-    width: 100%
-    height: 100%
-    object-fit: cover
-
-  &__number,
-  &__caption,
-  &__button
-    position: absolute
-    z-index: 5
-    left: 30px
-
-  &__number
-    top: 45px
-
-    margin: 0
-
-    font-size: 20px
-
-    &::after
-      position: absolute
-      right: -82px
-      bottom: 0
-
-      display: block
-      width: 70px
-      height: 1px
-      
-      content: ''
-      background-color: $nontransparent
-
-  &__caption
-    bottom: 15px
-
-    text-transform: uppercase
-
-  &__button
-    bottom: 30px
-
-    display: none
-    max-width: 200px
-
-  &__decor-line
-    max-width: width 70px
+  //INDICATORS START
 
   &__indicators
     display: none
@@ -145,5 +53,7 @@
     &:last-child
       @media screen and ( min-width: $mobile_l + 1px )
         display: none
-    
+
+  //INDICATORS END
+
       
