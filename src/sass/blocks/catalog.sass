@@ -22,9 +22,27 @@
     @media screen and ( max-width: $tablet )
       display: none
 
+  &__cards
+    display: flex
+    flex-wrap: nowrap
+    justify-content: space-evenly
+
   &__card
+    width: 100%
     max-width: 350px
     min-width: 288px
+
+    // SHOW / HIDE CARDS
+
+  &__card
+    @media screen and ( max-width: 1340px )
+      &:nth-child(3),
+      &:nth-child(4)
+        display: none
+    @media screen and ( max-width: $mobile_l )
+      &:nth-child(2)
+        display: none
+        
 
   //INDICATORS START
 
@@ -34,7 +52,7 @@
 
     margin: 30px auto 0
 
-    @media screen and ( max-width: $tablet )
+    @media screen and ( max-width: 1340px )
       display: flex
 
     @media screen and ( max-width: $mobile_l )
@@ -46,7 +64,7 @@
     margin-left: 6px
     margin-right: 6px
     
-    @media screen and ( min-width: $tablet + 1px )
+    @media screen and ( min-width: 1340px + 1px )
       display: none
 
     &:nth-child(3),
