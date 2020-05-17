@@ -1,44 +1,93 @@
 .intro
   min-height: 100vh
+
+  //bottom gradient, filter, bg-image
   background-image: linear-gradient(0deg, #3B181E 1.33%, rgba(59, 24, 30, 0) 10%), linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, .6)), url(../img/intro-bg.jpg)
   background-repeat: no-repeat, no-repeat, no-repeat
   background-size: cover, cover, cover
   background-position: 0 100%, 50%, 50%
+
+  @media screen and ( max-width: $tablet )
+    background-image: linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, .6)), url(../img/intro-bg.jpg)
+
   &__container
     display: flex
     justify-content: space-between
     align-content: flex-end
+    min-height: 100vh
     padding-top: 245px
-    padding-bottom: 70px
+    padding-bottom: 115px
+    @media screen and ( max-width: $tablet )
+      flex-direction: column
+      padding-bottom: 55px
+    @media screen and ( max-width: $tablet )
+      padding-top: 170px
+      padding-bottom: 40px
 
   &__heading
     max-width: 820px
     margin-bottom: 80px
 
     font-size: 120px
-    font-weight: 400
     text-transform: uppercase
     text-align: center
     letter-spacing: 10px
     line-height: 110%
 
+    @media screen and ( max-width: $tablet )
+      font-size: 70px
+    @media screen and ( max-width: $mobile_l )
+      font-size: 30px
+      margin-bottom: 30px
+
   &__social-link
     display: block
+    max-height: 55px
+
     &:not(:last-child)
       margin-bottom: 25px
+      @media screen and ( max-width: $tablet )
+        margin-bottom: 0
+        margin-right: 80px
+      @media screen and ( max-width: $mobile_l )
+        margin-right: 40px
+
+    @media screen and ( max-width: $tablet )
+      padding: 15px
+      background-color: $bg
+      border-radius: 50%
+    @media screen and ( max-width: $mobile_l )
+      padding: 9px
+      max-height: 55px
 
   &__main
     display: flex
     flex-direction: column
     align-items: center
     justify-content: flex-end
+    @media screen and ( max-width: $tablet )
+      order: 1
 
   &__button
     margin-bottom: 157px
+    @media screen and ( max-width: $mobile_l )
+      margin-bottom: 70px
 
   &__aside
     display: flex
     display: flex
     flex-direction: column
     justify-content: flex-end
+    &_left
+      @media screen and ( max-width: $tablet )
+        order: 2
+        flex-direction: row
+        justify-content: center
+        margin-bottom: 35px
+    &_right
+      @media screen and ( max-width: $tablet )
+        order: 3
+  &__scroll-tip
+    @media screen and ( max-width: $tablet )
+      display: none
     
