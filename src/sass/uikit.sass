@@ -78,7 +78,6 @@
   display: inline-block
 
 .arrow-link
-  font-size: 20px  // TEMP
   position: relative
 
   display: inline-block
@@ -86,25 +85,56 @@
 
   letter-spacing: 1px
 
-  writing-mode: vertical-lr
   cursor: pointer
-  
-  &::after
+
+  @media screen and ( max-width: $mobile_l )
+    padding-bottom: 40px
+
+  &__text
+    writing-mode: vertical-lr
+    font-size: 20px
+
+    @media screen and ( max-width: $tablet )
+      display: none
+
+  &__img
     position: absolute
-    left: calc(50% - 7px)
+    left: 50%
+    transform: translateX(-50%)
+
     bottom: 20px
-    content: ''
-
-    display: block
-    height: 20px
     width: 14px
-
-    background: url('../img/svg/arrow-down.svg')
+    height: 20px
 
     transition: $transition
 
-  &:hover::after
+    @media screen and ( max-width: $tablet )
+      width: 42px
+      height: 42px
+    @media screen and ( max-width: $mobile_l )
+      width: 19px
+      height: 19px
+
+  &:hover .arrow-link__img
     bottom: 5px
+    
+  
+  // &::after
+  //   position: absolute
+  //   left: calc(50% - 7px)
+  //   bottom: 20px
+  //   content: ''
+
+  //   display: block
+  //   height: 20px
+  //   width: 14px
+
+  //   background: url('../img/svg/arrow-down.svg')
+
+  //   transition: $transition
+
+  // &:hover::after
+  //   bottom: 5px
   
 // REST ELEMENTS END
 
