@@ -7,7 +7,7 @@
 
   &__decor
     position: absolute
-    z-index: -1
+    z-index: -10
 
     width: 100%
 
@@ -19,7 +19,10 @@
     white-space: nowrap
     opacity: 3%
 
-    @media screen and ( max-width: 1600px )
+    @media screen and ( max-width: 1700px )
+      font-size: 190px
+
+    @media screen and ( max-width: 1500px )
       display: none
 
   &__cards
@@ -30,7 +33,7 @@
   &__card
     width: 100%
     max-width: 350px
-    min-width: 288px
+    min-width: 210px
 
     // SHOW / HIDE CARDS
 
