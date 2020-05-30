@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const fs = require('fs')
 
 const isDev = process.env.NODE_ENV === 'development'
 console.log(isDev)
@@ -34,6 +35,7 @@ const cssLoaders = extraLoader => {
   return loaders
 }
 
+const pages = fs.readdirSync(path.resolve(__dirname, 'src', 'pages'))
 
 module.exports = {
   entry: './src/js/index.js',
@@ -51,6 +53,12 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "./src/index.html"
     }),
+    ...pages.map( page => {
+      return new HTMLWebpackPlugin({
+        filename: page,
+        template: "./src/pages/" + page
+      })
+    } ),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: filename('css')
