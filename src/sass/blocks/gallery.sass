@@ -1,0 +1,49 @@
+.gallery
+  position: relative
+  max-width: 552px
+
+  &__list
+    left: 0
+    overflow: hidden
+    max-width: 552px
+
+    display: flex
+    margin-top: 0
+    margin-bottom: 0
+
+  &__list-item
+    flex-basis: 123px
+    flex-shrink: 0
+    &:not(:last-child)
+      margin-right: 20px
+      
+  &__img
+    width: 123px
+    height: 123px
+    object-fit: cover
+
+  &__button
+    position: absolute
+    top: 50%
+    z-index: 10
+
+    display: block
+    height: 46px
+    width: 46px
+    
+    border: 1px solid #ffffff
+    border-radius: 50%
+    background-color: rgba(0, 0, 0, .4)
+    background-image: url(../img/svg/arrow-right.svg)
+    background-repeat: no-repeat
+    background-position: 50%
+    cursor: pointer
+
+    transform: translateY(-50%)
+    
+    &_next
+      right: -23px
+    &_prev
+      left: -23px
+      transform: translateY(-50%) rotate(180deg)
+      
