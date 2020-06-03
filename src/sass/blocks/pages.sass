@@ -8,8 +8,10 @@
 
     @media screen and ( max-width: $tablet_l )
       flex-direction: column
-      
 
+    @media screen and ( max-width: $mobile_l )
+      margin-top: 72px
+      
     &::after
       content: ''
 
@@ -27,7 +29,6 @@
       @media screen and ( max-width: $tablet_l )
         display: none
 
-    
   &__image
     flex-basis: 50%
     min-height: 100vh
@@ -39,8 +40,7 @@
 
     @media screen and ( max-width: $tablet_l )
       min-height: 50vh
-      margin-bottom: 30px
-    
+      margin-bottom: 30px    
 
   &__content
     padding-left: 114px
@@ -51,8 +51,11 @@
     justify-content: center
 
     @media screen and ( max-width: $tablet_l )
-      margin: 0 60px 70px
+      margin: 0 60px 20px
       padding: 0
+
+    @media screen and ( max-width: $mobile_l )
+      margin: 0 20px 45px
 
   &__title
     margin-top: auto
@@ -61,11 +64,15 @@
 
 
     font-size: 50px
-    line-height: 55px
+    line-height: 1.1
     letter-spacing: 0.09em
 
     @media screen and ( max-width: $tablet_l )
+      max-width: 100%
       margin-bottom: 30px
+
+    @media screen and ( max-width: $mobile_l )
+      font-size: 20px
 
   &__text
     margin-bottom: 30px
@@ -74,13 +81,14 @@
     font-size: 18px
     line-height: 150%
 
+    @media screen and ( max-width: $tablet_l )
+      max-width: 100%
+    
+
 
   &__button
-    margin-bottom: 100px
+    margin-bottom: 50px
     align-self: flex-start
-
-    @media screen and ( max-width: $tablet_l )
-      margin-bottom: 0
 
   &__gallery
     margin-bottom: 30px
@@ -88,6 +96,10 @@
       order: -1
       margin-bottom: 70px
       align-self: center
+
+    @media screen and ( max-width: $mobile_l )
+      order: 4
+      margin-bottom: 25px
 
   &__more
     display: flex

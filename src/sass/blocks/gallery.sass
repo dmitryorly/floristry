@@ -14,13 +14,24 @@
   &__list-item
     flex-basis: 123px
     flex-shrink: 0
+    
     &:not(:last-child)
       margin-right: 20px
+      
+      @media screen and ( max-width: $mobile_l )
+        margin-right: 15px
+
+    @media screen and ( max-width: $mobile_l )
+      flex-basis: 75px
       
   &__img
     width: 123px
     height: 123px
     object-fit: cover
+
+    @media screen and ( max-width: $mobile_l )
+      width: 75px
+      height: 75px
 
   &__button
     position: absolute
