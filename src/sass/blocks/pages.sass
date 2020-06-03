@@ -2,9 +2,13 @@
   margin-bottom: 0
 
   &__container
-    position: absolute
+    position: relative
     display: flex
     min-height: 100vh
+
+    @media screen and ( max-width: $tablet_l )
+      flex-direction: column
+      
 
     &::after
       content: ''
@@ -19,6 +23,10 @@
       display: block
       
       border: 1px solid rgba(255, 255, 255, 0.2)
+
+      @media screen and ( max-width: $tablet_l )
+        display: none
+
     
   &__image
     flex-basis: 50%
@@ -28,6 +36,10 @@
     background-repeat: no-repeat
     background-size: cover
     background-position: 50%
+
+    @media screen and ( max-width: $tablet_l )
+      min-height: 50vh
+      margin-bottom: 30px
     
 
   &__content
@@ -38,6 +50,10 @@
     flex-direction: column
     justify-content: center
 
+    @media screen and ( max-width: $tablet_l )
+      margin: 0 60px 70px
+      padding: 0
+
   &__title
     margin-top: auto
     margin-bottom: 50px
@@ -47,6 +63,9 @@
     font-size: 50px
     line-height: 55px
     letter-spacing: 0.09em
+
+    @media screen and ( max-width: $tablet_l )
+      margin-bottom: 30px
 
   &__text
     margin-bottom: 30px
@@ -60,8 +79,15 @@
     margin-bottom: 100px
     align-self: flex-start
 
+    @media screen and ( max-width: $tablet_l )
+      margin-bottom: 0
+
   &__gallery
-    margin-bottom: 30px 
+    margin-bottom: 30px
+    @media screen and ( max-width: $tablet_l )
+      order: -1
+      margin-bottom: 70px
+      align-self: center
 
   &__more
     display: flex
@@ -69,6 +95,10 @@
     justify-self: flex-end
     margin-top: auto
     margin-bottom: 45px
+
+    @media screen and ( max-width: $tablet_l )
+      display: none
+
     &-text
       margin-top: 0
       margin-bottom: 0
@@ -82,3 +112,8 @@
 
   &__svg
     align-self: center
+
+  &__footer
+    display: block
+    @media screen and ( min-width: $tablet_l + 1px )  // [0 - 1024px]
+      display: none
