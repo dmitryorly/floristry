@@ -17,7 +17,7 @@
     line-height: 280px
     letter-spacing: 13px
     white-space: nowrap
-    opacity: 3%
+    opacity: .03
 
     @media screen and ( max-width: 1700px )
       font-size: 190px
@@ -28,7 +28,8 @@
   &__cards
     display: flex
     flex-wrap: nowrap
-    justify-content: space-evenly
+    // justify-content: space-evenly // Original
+    justify-content: center //Edge
 
   &__card
     width: 100%
