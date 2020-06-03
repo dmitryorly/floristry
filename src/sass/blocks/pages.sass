@@ -3,7 +3,6 @@
   &__container
     display: flex
     min-height: 100vh
-    height: 1px
     
   &__image
     position: relative
@@ -11,6 +10,13 @@
     max-height: 100vh
     object-fit: cover
 
+  &__test-image
+    flex-basis: 50%
+    min-height: 100vh
+    background-image: url('../img/pages/event-bouquets/main-event-bouquets.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 50%
     
 
   &__content
@@ -20,7 +26,6 @@
     flex-basis: 50%
     flex-direction: column
     justify-content: center
-    height: 100%
 
     &::after
       content: ''
