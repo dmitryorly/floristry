@@ -1,8 +1,24 @@
 .page
   margin-bottom: 0
+  
   &__container
+    position: absolute
     display: flex
     min-height: 100vh
+
+    &::after
+      content: ''
+
+      position: absolute
+      z-index: 20
+      top: 30px
+      bottom: 30px
+      left: 30px
+      right: calc(50% - 30px)
+
+      display: block
+      
+      border: 1px solid rgba(255, 255, 255, 0.2)
     
   &__image
     position: relative
@@ -26,24 +42,6 @@
     flex-basis: 50%
     flex-direction: column
     justify-content: center
-
-    &::after
-      content: ''
-
-      position: absolute
-      z-index: 20
-      top: 30px
-      bottom: 30px
-      left: 30px
-      right: calc(50% - 30px)
-      // right: 50%
-
-      display: block
-      // height: 200px
-      // width: 200px
-      // background-color: red
-      border: 1px solid rgba(255, 255, 255, 0.2)
-
 
   &__title
     margin-top: auto
