@@ -8,17 +8,20 @@
     width: 100%
     height: 100vh
     display: none
-    justify-content: center
-    align-items: center
+    overflow: auto
 
     background-color: rgba(6, 6, 6, .7)
 
   &__container
     position: relative
+
     width: 716px
     display: flex
+    margin: 15% auto
 
     background-color: $bg
+
+    animation: modalanim .3s ease-out
 
     @media screen and ( max-width: $tablet_l )
       width: 464px
@@ -144,3 +147,12 @@
     @media screen and ( max-width: $mobile_l )
       width: 250px
       font-size: 11px
+
+
+@keyframes modalanim
+  0%
+    top: -300px
+    opacity: 0
+  100%
+    top: 0
+    opacity: 1

@@ -5,12 +5,12 @@ export default function modals() {
         e.preventDefault();
       }
 
-      modalWindow.classList.add('display-flex')
+      modalWindow.classList.add('display-block')
       document.body.classList.add('overflow-hidden')
     })
 
     close.addEventListener('click', () => {
-      modalWindow.classList.remove('display-flex')
+      modalWindow.classList.remove('display-block')
       modalWindow.classList.remove('display-none')
       document.body.classList.remove('overflow-hidden')
     })
