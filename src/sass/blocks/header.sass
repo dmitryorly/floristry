@@ -11,6 +11,7 @@
   @media screen and ( max-width: $mobile_l )
     background-color: $bg
 
+
   &__container
     display: flex
     justify-content: space-between
@@ -21,6 +22,7 @@
 
     @media screen and ( max-width: $mobile_l )
       padding: 15px 30px 20px
+
 
   &__logo
     display: block
@@ -45,6 +47,63 @@
       width: 100%
       height: auto
 
+    &_menu
+      margin-bottom: 160px
+
+
   &__menu
-    position: absolute
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 2500
+    
+    // display: flex
     display: none
+    flex-direction: column
+    align-items: center
+    height: 100vh
+    width: 100%
+    padding: 95px
+
+    background-color: $bg
+
+  &__close
+    position: absolute
+    top: 0
+    right: 0
+    margin-top: 10px
+
+  &__list-item
+    max-width: 333px
+    padding: 40px
+    text-align: center
+
+  &__nav-link
+    font-size: 35px
+    line-height: 39px
+    letter-spacing: 0.09em
+    text-transform: uppercase
+    color: rgba(255, 255, 255, 0.5)
+
+    transition: .2s
+
+    &:hover
+      color: rgba(255, 255, 255, 1)
+
+  &__social-links
+    position: absolute
+    left: 95px
+    bottom: 95px
+
+    display: flex
+    flex-direction: column
+
+  &__social-link
+    opacity: .5
+    transition: .2s
+
+    &:hover
+      opacity: 1
+  
+    &:not(:last-child)
+      margin-bottom: 25px 
