@@ -1,24 +1,42 @@
 export default function modals() {
-  function bindModal(trigger, modalWindow, close) {
+  function bindModal(triggerSelector, modalSelector, closeSelector) {
+    const trigger = document.querySelector(triggerSelector),
+      modal = document.querySelector(modalSelector),
+      close = document.querySelector(closeSelector),
+      input = modal.querySelector('form input');
+
+    const closeModal = (e) => {
+      modal.classList.remove('display-block')
+      modal.classList.remove('display-none')
+      trigger.focus()
+      document.body.removeEventListener('keyup', escHandler)
+    }
+
+    const escHandler = e => {
+      if (e.key == "Escape") {
+        closeModal()
+      }
+    }
+
     trigger.addEventListener('click', e => {
       if (e.target) {
         e.preventDefault();
       }
 
-      modalWindow.classList.add('display-block')
-      document.body.classList.add('overflow-hidden')
-    })
+      modal.classList.add('display-block')
+      input.focus()
 
-    close.addEventListener('click', () => {
-      modalWindow.classList.remove('display-block')
-      modalWindow.classList.remove('display-none')
-      document.body.classList.remove('overflow-hidden')
-    })
-  }
+      document.body.addEventListener('keyup', escHandler)
+  })
 
-  const orderButton = document.querySelector('.js-order'),
-    modalOrder = document.querySelector('.modal'),
-    modalCloseButton = modalOrder.querySelector('.modal__close');
+  close.addEventListener('click', closeModal)
 
-  bindModal(orderButton, modalOrder, modalCloseButton);
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      closeModal()
+    }
+  })
+}
+
+bindModal('.js-order', '.modal', '.modal__close');
 }

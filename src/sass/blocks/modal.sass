@@ -8,9 +8,10 @@
     width: 100%
     height: 100vh
     display: none
-    overflow: auto
+    // overflow: auto
 
     background-color: rgba(6, 6, 6, .7)
+
 
   &__container
     position: relative
@@ -29,6 +30,7 @@
     @media screen and ( max-width: $mobile_l )
       width: 288px
 
+
   &__inner
     padding: 66px
     flex-basis: 335px
@@ -39,6 +41,7 @@
 
     @media screen and ( max-width: $mobile_l )
       padding: 60px 20px 50px
+
 
   &__image
     flex-basis: 335px
@@ -51,6 +54,7 @@
     @media screen and ( max-width: $tablet_l )
       display: none
 
+
   &__close
     position: absolute
     top: 22px
@@ -59,11 +63,18 @@
     height: 22px
     width: 22px
 
+    background-color: transparent
     background-image: url('../img/svg/burger-close-desktop.svg')
     background-repeat: no-repeat
     background-position: 50% 50%
     background-size: 22px 22px
+    border: none
+    outline: none
     cursor: pointer
+    
+    &:hover
+      transform: scale(.98)
+
 
   &__text
     padding-top: 0
@@ -82,6 +93,7 @@
     @media screen and ( max-width: $mobile_l )
       margin-bottom: 30px
       font-size: 20px
+
 
   &__input
     border: 1px solid rgba(246, 246, 249, 0.2)
@@ -110,7 +122,6 @@
       &:last-child
         margin-bottom: 30px
 
-
     &::placeholder
       font-size: 14px
       line-height: 15px
@@ -125,17 +136,23 @@
       @media screen and ( max-width: $mobile_l )
         font-size: 14px
 
+
   &__submit
     width: 250px
 
     color: #000000
 
     outline: none
-    border: none
+    border: 1px solid #ffffff
     background-color: #fff
     cursor: pointer
 
-    transition: .1s
+    transition: .2s
+
+    &:hover,
+    &:focus
+      background-color: rgba(0, 0, 0, .4)
+      color: #ffffff
 
     &:active
       transform: scale(.98)
