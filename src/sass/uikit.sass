@@ -98,7 +98,7 @@
     writing-mode: vertical-lr
     font-size: 20px
 
-    @media screen and ( max-width: $tablet )
+    @media screen and ( max-width: $tablet_l )
       display: none
 
   &__img
@@ -112,7 +112,7 @@
 
     transition: $transition
 
-    @media screen and ( max-width: $tablet )
+    @media screen and ( max-width: $tablet_l )
       width: 42px
       height: 42px
     @media screen and ( max-width: $mobile_l )
@@ -167,7 +167,7 @@
 
   cursor: pointer
 
-  @media screen and ( min-width: $tablet )
+  @media screen and ( min-width: $tablet_l )
     height: 76px
     width: 104px
 
@@ -188,14 +188,14 @@
   &_open
     &::after
       background-image: url(../img/svg/burger-open-mobile.svg)
-      @media screen and ( min-width: $tablet )
+      @media screen and ( min-width: $tablet_l )
         background-image: url(../img/svg/burger-open-desktop.svg)
 
   &_close
     &::after
       background-image: url(../img/svg/burger-close-mobile.svg)
       background-position: 50%
-      @media screen and ( min-width: $tablet )
+      @media screen and ( min-width: $tablet_l )
         background-image: url(../img/svg/burger-close-desktop.svg)
 
 
@@ -211,7 +211,7 @@
     font-size: 20px
     line-height: 76px
 
-    @media screen and ( min-width: $tablet )
+    @media screen and ( min-width: $tablet_l )
       display: block
     
 .test-border
@@ -316,7 +316,7 @@
     transition-delay: .7s
 
 .card:hover
-  @media screen and ( min-width: $tablet )
+  @media screen and ( min-width: $tablet_l )
     outline: 1px solid rgba(255, 255, 255, .2)
     .card__inner
       background-color: rgba(0, 0, 0, 0.6)
