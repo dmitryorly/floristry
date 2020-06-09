@@ -48,7 +48,8 @@
       height: auto
 
     &_menu
-      margin-bottom: 160px
+      margin-top: 0
+      margin-bottom: auto
 
 
   &__menu
@@ -60,6 +61,7 @@
     // display: flex
     display: none
     flex-direction: column
+    overflow-y: auto
     align-items: center
     height: 100vh
     width: 100%
@@ -67,16 +69,37 @@
 
     background-color: $bg
 
+    animation: fadeout .2s ease-out
+
+    @media screen and ( max-width: $mobile_l )
+      padding: 25px
+
   &__close
     position: absolute
     top: 0
     right: 0
     margin-top: 10px
 
+    @media screen and ( max-width: $tablet_l )
+      top: 20px
+      right: 40px
+
+  &__nav
+    margin: auto 0
+
+  &__list
+    margin: 0
+
   &__list-item
     max-width: 333px
     padding: 40px
     text-align: center
+
+    @media screen and ( max-width: $tablet_l )
+      padding: 35px
+      
+    @media screen and ( max-width: $mobile_l )
+      padding: 20px
 
   &__nav-link
     font-size: 35px
@@ -87,6 +110,9 @@
 
     transition: .2s
 
+    @media screen and ( max-width: $mobile_l )
+      font-size: 25px
+
     &:hover
       color: rgba(255, 255, 255, 1)
 
@@ -95,8 +121,11 @@
     left: 95px
     bottom: 95px
 
-    display: flex
+    display: none
     flex-direction: column
+    
+    @media screen and ( min-width: $tablet_l + 1px)
+      display: flex
 
   &__social-link
     opacity: .5
@@ -106,4 +135,11 @@
       opacity: 1
   
     &:not(:last-child)
-      margin-bottom: 25px 
+      margin-bottom: 25px
+
+
+@keyframes fadeout
+  0%
+    opacity: 0
+  100%
+    opacity: 1
