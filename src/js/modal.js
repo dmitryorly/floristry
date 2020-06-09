@@ -3,13 +3,25 @@ export default function modals() {
     const trigger = document.querySelector(triggerSelector),
       modal = document.querySelector(modalSelector),
       close = document.querySelector(closeSelector),
+      modalCard = modal.querySelector('.modal__container'),
       input = modal.querySelector('form input');
 
     const closeModal = (e) => {
-      modal.classList.remove('display-block')
-      modal.classList.remove('display-none')
+      modalCard.classList.remove('anim_topdown')
+      modalCard.classList.add('anim_downtop')
+      setTimeout( () => {
+        modal.classList.remove('display-block')
+      }, 300)
       trigger.focus()
       document.body.removeEventListener('keyup', escHandler)
+    }
+    
+    const openModal = () => {
+      modalCard.classList.remove('anim_downtop')
+      modalCard.classList.add('anim_topdown')
+      modal.classList.add('display-block')
+      input.focus()
+      document.body.addEventListener('keyup', escHandler)
     }
 
     const escHandler = e => {
@@ -23,10 +35,7 @@ export default function modals() {
         e.preventDefault();
       }
 
-      modal.classList.add('display-block')
-      input.focus()
-
-      document.body.addEventListener('keyup', escHandler)
+      openModal()
   })
 
   close.addEventListener('click', closeModal)

@@ -11,16 +11,21 @@ export default function headerMenu() {
     }
 
     const showMenu = () => {
-      menu.classList.add('display-flex')
+      menu.classList.remove('anim_fade-out')
+      menu.classList.add('display-flex', 'anim_fade-in')
       document.body.classList.add('overflow-hidden')
 
       document.body.addEventListener('keyup', escHandler)
     }
 
     const hideMenu = () => {
-      menu.classList.remove('display-flex')
+      menu.classList.remove('anim_fade-in')
+      menu.classList.add('anim_fade-out')
       document.body.classList.remove('overflow-hidden')
-
+      setTimeout(() => {
+        menu.classList.remove('display-flex')
+      }, 200)
+      
       document.body.removeEventListener('keyup', escHandler)
     }
 
@@ -29,8 +34,8 @@ export default function headerMenu() {
     closeBtn.addEventListener('click', hideMenu)
     menu.addEventListener('click', e => {
       const target = e.target
-      
-      if (target.hasAttribute('href') || target.parentNode.hasAttribute('href')){
+
+      if (target.hasAttribute('href') || target.parentNode.hasAttribute('href')) {
         hideMenu()
       }
     })
