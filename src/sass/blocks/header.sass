@@ -69,20 +69,21 @@
 
     background-color: $bg
 
-    animation: fadeout .2s ease-out
-
     @media screen and ( max-width: $mobile_l )
       padding: 25px
 
   &__close
     position: absolute
-    top: 0
-    right: 0
+    top: 70px
+    right: 95px
     margin-top: 10px
 
     @media screen and ( max-width: $tablet_l )
       top: 20px
       right: 40px
+      
+    @media screen and ( max-width: $mobile_l )
+      top: 10px
 
   &__nav
     margin: auto 0
@@ -136,10 +137,3 @@
   
     &:not(:last-child)
       margin-bottom: 25px
-
-
-@keyframes fadeout
-  0%
-    opacity: 0
-  100%
-    opacity: 1

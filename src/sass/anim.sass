@@ -1,0 +1,39 @@
+.anim
+  &_fade-in
+    animation: fadein .2s ease-in
+  &_fade-out
+    animation: fadeout .2s ease-out
+  &_topdown
+    animation: topdown .3s ease-in
+  &_downtop
+    animation: downtop .3s ease-out
+
+@keyframes fadein
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes fadeout
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+
+@keyframes topdown
+  0%
+    top: -300px
+    opacity: 0
+  100%
+    top: 0
+    opacity: 1
+
+@keyframes downtop
+  0%
+    top: 0
+    opacity: 1
+  100%
+    top: -300px
+    opacity: 0
+    
