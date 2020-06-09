@@ -46,7 +46,8 @@ module.exports = {
   mode: 'development',
   devtool: isDev ? 'source-map' : '',
   devServer: {
-    port: 4200
+    port: 4200,
+    host: '192.168.1.34'
   },
   optimization: optimization(),
   plugins: [
