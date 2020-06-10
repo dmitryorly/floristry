@@ -6,7 +6,10 @@
 
   width: 100%
 
-  tansition: $transition
+  transition: $transition
+
+  &_bg
+    background-color: $bg
 
   @media screen and ( max-width: $mobile_l )
     background-color: $bg
@@ -16,6 +19,12 @@
     display: flex
     justify-content: space-between
     padding-top: 80px
+    
+    transition: padding .3s ease-in
+
+    &_stick
+      @media screen and ( min-width: $tablet_l + 1px )
+        padding-top: 15px
 
     @media screen and ( max-width: $tablet_l )
       padding: 30px 10px 10px

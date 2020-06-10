@@ -41,6 +41,29 @@ export default function headerMenu() {
     })
   }
 
+  function headerPadding(headerSelector = '.header', headerContainerSelector = '.header__container') {
+    const header = document.querySelector(headerSelector),
+      headerContainer = header.querySelector(headerContainerSelector);
+    
+
+    window.addEventListener('scroll', () => {
+      if (pageYOffset > 80) {
+        header.classList.add('header_bg')
+        headerContainer.classList.add('header__container_stick')
+      } else if (pageYOffset < 80) {
+        header.classList.remove('header_bg')
+        headerContainer.classList.remove('header__container_stick')
+      }
+    })
+  }
+
+  try{
+    headerPadding()
+  }
+  catch (err) {
+    console.log(err);
+  }
+
   bindMenu('.burger_open', '.header__menu', '.header__menu .burger_close')
 
 }
