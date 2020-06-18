@@ -8,7 +8,6 @@ const TerserPlugin = require('terser-webpack-plugin')
 const fs = require('fs')
 
 const isDev = process.env.NODE_ENV === 'development'
-console.log(isDev)
 const isProd = !isDev
 
 const filename = ext => isDev? `[name].${ext}` : `[name].[hash].${ext}`
@@ -36,6 +35,23 @@ const cssLoaders = extraLoader => {
 }
 
 const pages = fs.readdirSync(path.resolve(__dirname, 'src', 'pages'))
+
+const optimizeFileLoader = () => {
+  if (isProd) {
+    return [
+      'file-loader',
+      {
+        loader: 'image-webpack-loader',
+        options: {
+          mozjpeg: {
+            progressive: true,
+            quality: 65
+          }
+        }
+      }
+    ]
+  } else return ['file-loader']
+}
 
 module.exports = {
   entry: './src/js/index.js',
@@ -95,7 +111,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|svg|gif)$/,
-        use: ['file-loader']
+        use: optimizeFileLoader
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
