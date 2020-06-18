@@ -51,6 +51,7 @@ module.exports = {
   },
   optimization: optimization(),
   plugins: [
+    new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       template: "./src/index.html"
     }),
@@ -60,7 +61,6 @@ module.exports = {
         template: "./src/pages/" + page
       })
     } ),
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: filename('css')
     }),
