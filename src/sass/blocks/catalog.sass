@@ -26,26 +26,32 @@
       display: none
 
   &__cards
-    display: flex
-    flex-wrap: nowrap
-    // justify-content: space-evenly // Original
-    justify-content: center //Edge
+    max-width: 1520px
+    margin: 0 auto
+    // display: flex
+    // flex-wrap: nowrap
+    // // justify-content: space-evenly // Original
+    // justify-content: center //Edge
 
   &__card
-    width: 100%
+    // width: 100%
     max-width: 350px
     min-width: 210px
+    margin: 1px
 
     // SHOW / HIDE CARDS
 
   &__card
     @media screen and ( max-width: 1340px )
-      &:nth-child(3),
-      &:nth-child(4)
-        display: none
-    @media screen and ( max-width: $mobile_l )
-      &:nth-child(2)
-        display: none
+      margin: 0 auto
+
+    // @media screen and ( max-width: 1340px )
+    //   &:nth-child(3),
+    //   &:nth-child(4)
+    //     display: none
+    // @media screen and ( max-width: $mobile_l )
+    //   &:nth-child(2)
+    //     display: none
         
 
   //INDICATORS START
@@ -71,10 +77,13 @@
     @media screen and ( min-width: 1340px + 1px )
       display: none
 
-    &:nth-child(3),
-    &:last-child
-      @media screen and ( min-width: $mobile_l + 1px )
-        display: none
+    // &:nth-child(3),
+    // &:last-child
+    //   @media screen and ( min-width: $mobile_l + 1px )
+    //     display: none
+
+.glide__bullet--active
+  background-color: #ffffff
 
   //INDICATORS END
 
