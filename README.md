@@ -5,5 +5,7 @@ The goal of this project is to study [webpack](https://webpack.js.org/) and get 
 - HTML
 - sass
 - JavaScript
-- webpack <br>
-Carousel: [glide](https://glidejs.com/)
+- webpack
+
+## Used libraries
+- Carousel: [glidejs](https://glidejs.com/)
